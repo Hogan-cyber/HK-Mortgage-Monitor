@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.mortgage-runtime/
+.mortgage_cache/
+.mortgage-save-*/
+.dashboard-*.tmp
+*.previous.xlsx
+~$*.xlsx
+last_failure.json
+.dashboard-sync.json
+.previous*/
+site/

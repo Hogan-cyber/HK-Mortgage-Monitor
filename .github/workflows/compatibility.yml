@@ -1,0 +1,35 @@
+name: Windows and Linux compatibility
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.py'
+      - requirements.txt
+      - '.github/workflows/compatibility.yml'
+      - 'Update Data.bat'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python update_mortgage_data.py --dashboard-only
+      - run: python -m unittest discover -s tests -v
+      - name: Verify the Windows update launcher
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: call "Update Data.bat" --dashboard-only <NUL
+      - run: python scripts/build_site.py
