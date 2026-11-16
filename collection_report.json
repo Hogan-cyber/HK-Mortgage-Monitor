@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-11-16T11:53:30+08:00",
+  "checked_at": "2026-11-17T04:01:01+08:00",
   "issues": [],
   "centaline_months": 178,
   "private_months": 178,
   "private_missing": [],
   "new_private_months": [],
   "status": "partial",
-  "duration_seconds": 115.6,
+  "duration_seconds": 121.0,
   "coverage": {
     "Centaline": {
       "start": "2012-01",
@@ -32,17 +32,17 @@
   },
   "macro_checks": {
     "M3": {
-      "checked_at": "2026-11-16T11:53:06.156954+08:00",
+      "checked_at": "2026-11-17T04:00:37.672247+08:00",
       "source": "https://www.hkma.gov.hk/media/eng/doc/market-data-and-statistics/monthly-statistical-bulletin/T020201.xls"
     },
     "HSBC Prime": {
-      "checked_at": "2026-11-16T11:53:09.361062+08:00",
+      "checked_at": "2026-11-17T04:00:39.781394+08:00",
       "source": "https://www.hsbc.com.hk/investments/market-information/hk/lending-rate/",
       "current_rate": 5.0,
       "history_fresh": true
     },
     "HIBOR Daily": {
-      "checked_at": "2026-11-16T11:53:09.361106+08:00",
+      "checked_at": "2026-11-17T04:00:39.781447+08:00",
       "source": "https://www.hkab.org.hk/",
       "expected_date": "2026-11-16",
       "holidays_skipped": [],
@@ -118,7 +118,7 @@
       "target_missing": false,
       "target_missing_fields": [],
       "fresh_target_missing": false,
-      "new_periods": 1,
+      "new_periods": 0,
       "filled_values": 0,
       "revised_values": 0,
       "fresh_records": 3656
