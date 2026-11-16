@@ -1,0 +1,127 @@
+{
+  "checked_at": "2026-11-16T11:53:30+08:00",
+  "issues": [],
+  "centaline_months": 178,
+  "private_months": 178,
+  "private_missing": [],
+  "new_private_months": [],
+  "status": "partial",
+  "duration_seconds": 115.6,
+  "coverage": {
+    "Centaline": {
+      "start": "2012-01",
+      "end": "2026-10",
+      "months": 178
+    },
+    "HKMA": {
+      "start": "2016-12",
+      "end": "2026-09",
+      "months": 118
+    },
+    "Land Registry": {
+      "start": "2024-11",
+      "end": "2026-10",
+      "months": 24
+    }
+  },
+  "missing_by_field": {
+    "现楼按揭宗数": [],
+    "楼花按揭宗数": [],
+    "私人住宅现楼宗数": [],
+    "资助房屋宗数": []
+  },
+  "macro_checks": {
+    "M3": {
+      "checked_at": "2026-11-16T11:53:06.156954+08:00",
+      "source": "https://www.hkma.gov.hk/media/eng/doc/market-data-and-statistics/monthly-statistical-bulletin/T020201.xls"
+    },
+    "HSBC Prime": {
+      "checked_at": "2026-11-16T11:53:09.361062+08:00",
+      "source": "https://www.hsbc.com.hk/investments/market-information/hk/lending-rate/",
+      "current_rate": 5.0,
+      "history_fresh": true
+    },
+    "HIBOR Daily": {
+      "checked_at": "2026-11-16T11:53:09.361106+08:00",
+      "source": "https://www.hkab.org.hk/",
+      "expected_date": "2026-11-16",
+      "holidays_skipped": [],
+      "failed_dates": [],
+      "history_fresh": true
+    }
+  },
+  "update_feedback": {
+    "中原按揭": {
+      "latest": "2026-10",
+      "target": "2026-10",
+      "target_missing": false,
+      "target_missing_fields": [],
+      "fresh_target_missing": false,
+      "new_periods": 0,
+      "filled_values": 0,
+      "revised_values": 0,
+      "fresh_records": 172
+    },
+    "HKMA": {
+      "latest": "2026-09",
+      "target": "2026-10",
+      "target_missing": true,
+      "target_missing_fields": [
+        "新取用宗数",
+        "新取用金额_HK$Mn"
+      ],
+      "fresh_target_missing": true,
+      "new_periods": 0,
+      "filled_values": 0,
+      "revised_values": 0,
+      "fresh_records": 118
+    },
+    "土地注册处": {
+      "latest": "2026-10",
+      "target": "2026-10",
+      "target_missing": false,
+      "target_missing_fields": [],
+      "fresh_target_missing": false,
+      "new_periods": 0,
+      "filled_values": 0,
+      "revised_values": 0,
+      "fresh_records": 24
+    },
+    "M3": {
+      "latest": "2026-09",
+      "target": "2026-10",
+      "target_missing": true,
+      "target_missing_fields": [
+        "港元M3(HK$Mn)",
+        "所有货币M3(HK$Mn)"
+      ],
+      "fresh_target_missing": true,
+      "new_periods": 0,
+      "filled_values": 0,
+      "revised_values": 0,
+      "fresh_records": 177
+    },
+    "HSBC Prime": {
+      "latest": "2025-10-31",
+      "target": null,
+      "target_missing": false,
+      "target_missing_fields": [],
+      "fresh_target_missing": false,
+      "new_periods": 0,
+      "filled_values": 0,
+      "revised_values": 0,
+      "fresh_records": 13
+    },
+    "HIBOR Daily": {
+      "latest": "2026-11-16",
+      "target": "2026-11-16",
+      "target_missing": false,
+      "target_missing_fields": [],
+      "fresh_target_missing": false,
+      "new_periods": 1,
+      "filled_values": 0,
+      "revised_values": 0,
+      "fresh_records": 3656
+    }
+  }
+}
