@@ -19,6 +19,17 @@ PATTERN = r'<script id="workbook-data" type="application/json">(.*?)</script>'
 
 
 class OfflineDashboardTests(unittest.TestCase):
+    def test_imported_writer_handles_a_western_console(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base=Path(folder)
+            self.copy_bundle(base)
+            output=io.BytesIO()
+            stream=io.TextIOWrapper(output,encoding='cp1252',errors='strict')
+            with patch.object(updater,'BASE',base), patch.object(updater.sys,'stdout',stream):
+                updater.update_dashboard(base/'hk_mortgage_data.xlsx')
+                stream.flush()
+                self.assertIn('已更新',output.getvalue().decode('utf-8'))
+
     def test_old_but_importable_excel_library_is_rejected(self):
         actual_version = updater.importlib.metadata.version
         def versions(name):

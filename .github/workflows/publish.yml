@@ -27,6 +27,7 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: write
+      pages: read
     steps:
       - uses: actions/checkout@v6
         with:
@@ -47,6 +48,8 @@ jobs:
       - name: Verify and prepare website
         run: python scripts/build_site.py
       - name: Save the refreshed workbook and source records
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -54,7 +57,10 @@ jobs:
           if [ -f collection_report.json ]; then git add collection_report.json; fi
           if ! git diff --cached --quiet; then
             git commit -m "Update workbook and dashboard snapshot"
-            git push origin HEAD:main
+            if ! git push origin HEAD:main; then
+              gh api "repos/$GITHUB_REPOSITORY" --jq '.permissions'
+              exit 1
+            fi
           fi
       - name: Preserve update diagnostics
         if: always()

@@ -1380,6 +1380,7 @@ def dashboard_snapshot(path):
 
 def update_dashboard(path):
     """Atomically replace the embedded data in the portable dashboard file."""
+    configure_console()
     destination = BASE / 'HK_Mortgage_Dashboard.html'
     if not destination.is_file():
         raise FileNotFoundError('请把 HK_Mortgage_Dashboard.html 与 Python 文件放在同一文件夹。')
